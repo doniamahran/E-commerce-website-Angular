@@ -1,0 +1,41 @@
+
+#prodDiv{
+  background-color: white !important;
+  width: 85% !important;
+  height: auto !important;
+  border: 6px double #F5B461;
+  border-radius: 0px 30px 0px 30px;
+  text-align: center;
+  margin-top: 50px !important;
+}
+
+.bgmine {
+  background-color: #f5b461 !important;
+ }
+
+ img {
+   width: 70% !important;
+   height: auto !;
+ }
+
+ a{
+  background-color: #f4511e;
+    opacity: 1;
+  transition: 0.3s;
+ }
+ a:hover {opacity: 0.6}
+
+ #label {
+  font-size: larger;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   color: #351006;
+ }
+
+ input {
+   border: 1px solid #F5B461;
+   border-radius: 10%;
+   border-top: none;
+   border-left: none;
+   border-right: none;
+   outline: none;
+ }
