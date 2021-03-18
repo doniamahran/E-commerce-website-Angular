@@ -38,7 +38,7 @@ export class ProductCollectionComponent implements OnInit {
 ////
 
   //assuming ADMIN
-  //user : string = "admin";
+  user : string = "admin";
 
 
   products :any ;

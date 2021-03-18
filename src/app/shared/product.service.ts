@@ -24,5 +24,10 @@ export class ProductService {
   addProduct(product: Product){
     return this.http.post(this.baseurl + 'api/product', product);
   }
-
+  updateProduct(id,data){
+    return this.http.patch(`http://localhost:3000/api/product/${id}`, data);
+  }
+  deleteProduct(id){
+    return this.http.delete(`http://localhost:3000/api/product/${id}`);
+  }
 }

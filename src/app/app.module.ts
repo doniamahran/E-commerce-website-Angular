@@ -26,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './shared/product.service';
 import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { DeleteProductComponent } from './delete-product/delete-product.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { EditProductComponent } from './edit-product/edit-product.component';
     ProductCollectionComponent,
     ProductDetailComponent,
     AddProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    DeleteProductComponent
   ],
   imports: [
     BrowserModule,
@@ -62,9 +64,10 @@ import { EditProductComponent } from './edit-product/edit-product.component';
       {path: 'product-detail/:_id', component: ProductDetailComponent},
       {path: 'addproduct', component: AddProductComponent},
       {path: 'edit/:_id', component: EditProductComponent},
-
-
+      {path: 'delete/:_id', component: DeleteProductComponent},
       {path: '', redirectTo: '/home', pathMatch: 'full'},
+      // {path: '404', component: NotFoundComponent},
+      // {path: '**', redirectTo: '/404'}
 
     ]),
     HttpClientModule
