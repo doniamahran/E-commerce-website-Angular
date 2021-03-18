@@ -1,0 +1,31 @@
+ .wm {
+  width: 30% !important;
+  padding-right: 6px ;
+}
+.bgmine {
+  background-color: #f5b461 !important;
+ }
+a{
+
+  opacity: 1;
+  transition: 0.3s;
+ }
+ a:hover {opacity: 0.6}
+
+ img {
+  opacity: 1;
+  transition: 0.3s;
+ }
+img:hover {
+  opacity: 0.6
+}
+/* .wr {
+  flex-wrap: nowrap !important;
+} */
+
+#logo {
+  width:40px;
+  height:40px;
+cursor: pointer;
+margin: 5px;
+}

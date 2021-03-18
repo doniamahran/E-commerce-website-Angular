@@ -1,0 +1,20 @@
+<p>cart works!</p>
+
+<button (click)="addtocart()">Add to cart </button>
+<button (click)="subtract()"> recrease from cart </button>
+
+<button (click)="checkout()"> checkout </button>
+
+
+
+<button (click)="getItem()">get item</button>
+<!-- <button (click)="clearcart()">clear cart</button> -->
+
+
+
+<div *ngFor="let item of items">
+  <p>{{item.name}}</p>
+  <p>{{item.price}}</p>
+  <p>{{item.quantity}}</p>
+  <p>{{item.image}}</p>
+</div>
