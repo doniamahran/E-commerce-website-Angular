@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
@@ -9,7 +9,9 @@ import { map, shareReplay } from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+
 
   user : any = 'admin';
 
@@ -32,4 +34,8 @@ export class AppComponent {
   }
  //end search
 constructor(private breakpointObserver: BreakpointObserver) {}
+  ngOnInit(): void {
+    localStorage.setItem("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTM4ZjAyNjE3MmU1MjRhMDhhN2U5NSIsImlhdCI6MTYxNjA5NTEzN30.I6kM-ZXyLa0pw8a5NXp2Fn2HpeNf8IcjvoJ8s2cZmyo");
+
+  }
 }

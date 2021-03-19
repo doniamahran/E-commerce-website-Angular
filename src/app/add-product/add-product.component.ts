@@ -20,7 +20,7 @@ export class AddProductComponent implements OnInit {
    constructor(public _ProductService : ProductService){}
 
   onSubmit(form: NgForm) {
-    this._ProductService.addProduct(form.value).subscribe(
+    this._ProductService.addProduct(this._ProductService.selectedProduct).subscribe(
       res => {
         this.showSucessMessage = true;
         setTimeout(() => this.showSucessMessage = false, 4000);
@@ -66,9 +66,11 @@ export class AddProductComponent implements OnInit {
 
     reader.readAsDataURL(file);
     reader.onload = readerEvent => {
+      this._ProductService.selectedProduct.image = file;
       let content = readerEvent.target.result;
       t2.src = content;
     };
+
   }
   //end of photo
 
