@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductlistService } from '../productlist.service';
+import{CartService} from '../cart.service';
 // import { Router, ActivatedRoute } from '@angular/router';
 
 
@@ -10,12 +11,37 @@ import { ProductlistService } from '../productlist.service';
 })
 export class ProductCollectionComponent implements OnInit {
 
-  // items = [
-  //   {id : 1, price : "$24.99", title: "Dark Chocolate Collection 15 Pieces"},
-  //   {id : 3, price : "$24.99", title: "Dark Chocolate Collection 15 Pieces"},
-  //   {id : 5, price : "$24.99", title: "Dark Chocolate Collection 15 Pieces"},
+  constructor(private cartService : CartService , private _productService : ProductlistService) { }
 
-  // ]
+  // product : any ;
+
+  items:any;
+
+
+  addtocart(_id){
+   let product = {
+      productId : _id,
+    }
+    product.productId = _id;
+    console.log(_id)
+      console.log(this.cartService.addToCart(product))
+  }
+  subtract(_id){
+    let product = {
+      productId : _id,
+    }
+    product.productId = _id;
+    console.log(this.cartService.subtractFromCart(product))
+  }
+  checkout(){
+   return this.cartService.checkout(JSON.parse(localStorage.getItem('cart'))).subscribe(
+     data=>console.log(data)
+   ) ;
+  }
+
+  getItem(){
+  this.items = (this.cartService.getItems());
+  }
 
   // public id : number = 5 ;
   // selectedProduct : ProductCollectionComponent;
@@ -42,7 +68,7 @@ export class ProductCollectionComponent implements OnInit {
 
 
   products :any ;
-  constructor(private _productService : ProductlistService) {}
+  // constructor(private _productService : ProductlistService) {}
   profile = {};
 
   loadUser() {

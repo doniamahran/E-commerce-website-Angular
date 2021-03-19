@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
@@ -9,9 +9,16 @@ import { map, shareReplay } from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
+  constructor(private breakpointObserver: BreakpointObserver) {}
+  ngOnInit(): void {
+    console.log(JSON.parse(localStorage.getItem('cart')).length)
+  }
+
+  // num:any = (JSON.parse(localStorage.getItem('cart'))).length ;
   user : any = 'admin';
+
 
   title = 'choco-proj';
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -31,5 +38,4 @@ export class AppComponent {
     })
   }
  //end search
-constructor(private breakpointObserver: BreakpointObserver) {}
 }

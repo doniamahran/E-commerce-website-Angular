@@ -14,11 +14,14 @@
            <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 
             <a href="#" class="btn bgmine mr-2 mb-2 mt-2" [routerLink]="['/product-detail',product._id]">Quick Look</a>
-            <a href="#" class="btn bgmine">Add to cart</a>
+            <button (click) = "addtocart(product._id)"   class="btn bgmine" >+</button>
+            <button (click) = "subtract(product._id)"   class="btn bgmine" >-</button>
 
 
-           <a [routerLink]="['/edit',product._id]"> <img src="../assets/img/edit.png" *ngIf="user=='admin'" alt="edit" id="logo"></a>
-           <a [routerLink]="['/delete',product._id]"> <img src="../assets/img/delete.png" *ngIf="user=='admin'" alt="delete" id="logo"></a>
+
+
+           <!-- <a [routerLink]="['/edit',product._id]"> <img src="../assets/img/edit.png" *ngIf="user=='admin'" alt="edit" id="logo"></a>
+           <a [routerLink]="['/delete',product._id]"> <img src="../assets/img/delete.png" *ngIf="user=='admin'" alt="delete" id="logo"></a> -->
 
         </div>
       </div>
