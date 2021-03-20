@@ -10,6 +10,7 @@ export class ProductdetailsService {
 
   }
   getProductDetail(id : any){
-   return this.http.get(`http://localhost:3000/api/product/${id}`);
+  //  return this.http.get(`http://localhost:3000/api/product/${id}`);
+  return this.http.get(`https://chocolate-store-api.herokuapp.com/api/product/${id}`);
   }
 }

@@ -22,7 +22,6 @@ export class CartService {
     else {
       // set array items to my localstorage items
       items = JSON.parse(localStorage.getItem('cart'));
-      console.log(items)
       // check if product exisit or not
       let productExist = items.findIndex((product) => product.productId == pro.productId);
       console.log(productExist)
@@ -35,9 +34,8 @@ export class CartService {
         localStorage.setItem('cart', JSON.stringify(items));
       } else {
         // if exist increment
-        pro = items[productExist];
+        pro = items[productExist]
         pro.quantity++;
-        // items[productExist] = pro;
         localStorage.setItem('cart', JSON.stringify(items));
         console.log(pro.quantity);
         console.log(items)
@@ -61,16 +59,18 @@ export class CartService {
           console.log("no such product in cart")
       } else {
         // if exist increment
-          pro = items[productExist];
-          if(pro.quantity != 0){
-            pro.quantity--;
-            localStorage.setItem('cart', JSON.stringify(items));
-            console.log(pro.quantity);
-            console.log(items);
-          }
-          else{
-            console.log("This item is nt in cart")
-          }
+        pro = items[productExist];
+        if(pro.quantity > 1){
+          pro.quantity--;
+          localStorage.setItem('cart', JSON.stringify(items));
+          console.log(pro.quantity);
+          console.log(items);
+        }
+        else{
+          console.log(items)
+        console.log(  items.splice(items[productExist],1))
+          localStorage.setItem('cart', JSON.stringify(items));
+        }
       }
     }
   }

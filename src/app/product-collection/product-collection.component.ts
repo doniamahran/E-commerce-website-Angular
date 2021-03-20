@@ -22,8 +22,8 @@ export class ProductCollectionComponent implements OnInit {
    let product = {
       productId : _id,
     }
-    product.productId = _id;
-    console.log(_id)
+    // product.productId = _id;
+    // console.log(_id)
       console.log(this.cartService.addToCart(product))
   }
   subtract(_id){
@@ -34,9 +34,14 @@ export class ProductCollectionComponent implements OnInit {
     console.log(this.cartService.subtractFromCart(product))
   }
   checkout(){
-   return this.cartService.checkout(JSON.parse(localStorage.getItem('cart'))).subscribe(
-     data=>console.log(data)
-   ) ;
+    if(JSON.parse(localStorage.getItem('cart')).length > 0)
+    {
+    return this.cartService.checkout(JSON.parse(localStorage.getItem('cart'))).subscribe(
+      data=>console.log(data),
+      err =>  console.log(err)
+   )}else{
+     console.log("Your cart is empty you cant checkout")
+   } ;
   }
 
   getItem(){

@@ -9,16 +9,11 @@ import { map, shareReplay } from 'rxjs/operators';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
-  ngOnInit(): void {
-    console.log(JSON.parse(localStorage.getItem('cart')).length)
-  }
 
-  // num:any = (JSON.parse(localStorage.getItem('cart'))).length ;
+
   user : any = 'admin';
-
 
   title = 'choco-proj';
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -38,4 +33,9 @@ export class AppComponent implements OnInit{
     })
   }
  //end search
+constructor(private breakpointObserver: BreakpointObserver) {}
+  ngOnInit(): void {
+    localStorage.setItem("token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTM4ZjAyNjE3MmU1MjRhMDhhN2U5NSIsImlhdCI6MTYxNjE1MTkzMX0.ZEUCV4vH6mCGlzsiY79XHNlMnVVuQPyeBUG4rcrGnXo");
+
+  }
 }

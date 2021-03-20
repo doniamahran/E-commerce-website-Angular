@@ -25,13 +25,19 @@ import {ProductlistService } from './productlist.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductService } from './shared/product.service';
 import { AddProductComponent } from './add-product/add-product.component';
-import { CartComponent } from './cart/cart.component';
-import { CartService } from './cart.service';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { DeleteProductComponent } from './delete-product/delete-product.component';
+import { LoginComponent} from '../app/login/login.component'
+import { RegistrationComponent} from '../app/registration/registration.component'
+import { ProfileComponent} from '../app/profilepage/profilepage.component'
+import { Profile} from '../app/profile'
+import { ProfilesService} from '../app/profiles.service'
+import { LoginService} from '../app/login.service'
+import { RegistrationService} from '../app/registration.service';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import {CartService} from './cart.service'
 
-// import { LoginComponent } from './login/login.component';
-// import { LoginsuccessComponent } from './loginsuccess/loginsuccess.component';
-// import { RegistrationComponent } from './registration/registration.component';
-// import { RegistrationService} from './registration.service'
+
 
 
 @NgModule({
@@ -47,10 +53,12 @@ import { CartService } from './cart.service';
     ProductCollectionComponent,
     ProductDetailComponent,
     AddProductComponent,
-    CartComponent,
-    // LoginComponent,
-    // LoginsuccessComponent,
-    // RegistrationComponent
+    EditProductComponent,
+    DeleteProductComponent,
+    LoginComponent,
+    RegistrationComponent,
+    ProfileComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
@@ -71,17 +79,21 @@ import { CartService } from './cart.service';
       {path: 'collection', component: ProductCollectionComponent},
       {path: 'product-detail/:_id', component: ProductDetailComponent},
       {path: 'addproduct', component: AddProductComponent},
-      {path: 'cart', component: CartComponent},
-      // {path: 'login', component: LoginComponent},
-      // {path: 'loginsucess', component: LoginsuccessComponent},
-      // {path: 'registration', component: RegistrationComponent},
-      {path: '', redirectTo: '/home', pathMatch: 'full'}
+      {path: 'edit/:_id', component: EditProductComponent},
+      {path: 'delete/:_id', component: DeleteProductComponent},
+      {path: 'login', component: LoginComponent},
+      {path: 'registration', component: RegistrationComponent},
+
+      {path: '', redirectTo: '/home', pathMatch: 'full'},
+      // {path: '404', component: NotFoundComponent},
+      // {path: '**', redirectTo: '/404'}
+
     ]),
     HttpClientModule
 
 
   ],
-  providers: [ProductlistService,ProductService/* ,RegistrationService */ , CartService],
+  providers: [ProductlistService,RegistrationService,LoginService,ProfilesService,CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

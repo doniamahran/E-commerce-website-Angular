@@ -1,4 +1,4 @@
- <h1 class="d-flex justify-content-center m-5 font-weight-bold">Our Collection</h1>
+<h1 class="d-flex justify-content-center m-5 font-weight-bold">Our Collection</h1>
 
 <div class="container d-inline-block justify-content-center wm" style="flex-wrap: nowrap !important; height: 500px !important; " *ngFor="let product of products ">
   <div class="card mb-3 w-100" style="  border: 6px double #F5B461;
@@ -6,16 +6,20 @@
     <div class="row-3 g-0">
   <div class="col">
     <!-- [src]="product.image" -->
-        <img src="./assets/img/slideimg2.jpg" class="image mt-3" style='height: 100%; width: 100%; object-fit: contain' alt="...">
+        <img src="https://chocolate-store-api.herokuapp.com/uploads/productImages/{{product.image}}" class="image mt-3" style='height: 100%; width: 100%; object-fit: contain' alt="...">
         <div class="card-body" style="text-align: center;">
 
           <h4 class="card-title font-weight-bold">{{product.name}}</h4>
           <h3 class="card-text font-weight-bold">Price: {{product.price}}</h3>
+          <h3 class="card-text font-weight-bold">quantity: {{product.quantity}}</h3>
+
            <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
 
             <a href="#" class="btn bgmine mr-2 mb-2 mt-2" [routerLink]="['/product-detail',product._id]">Quick Look</a>
             <button (click) = "addtocart(product._id)"   class="btn bgmine" >+</button>
             <button (click) = "subtract(product._id)"   class="btn bgmine" >-</button>
+            <button (click) = "checkout()"   class="btn bgmine" >checkouut</button>
+
 
 
 
@@ -29,5 +33,3 @@
     </div>
   </div>
 </div>
-
-
