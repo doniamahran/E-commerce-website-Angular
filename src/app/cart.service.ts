@@ -86,8 +86,6 @@ export class CartService {
       return this.http.post( `http://localhost:3000/api/order`, myorder , {'headers':header} );
   }
   clearCart() {
-    let items = [];
-    localStorage.setItem('cart',"");
-    return items;
+    console.log("Cart is empty")
   }
 }
