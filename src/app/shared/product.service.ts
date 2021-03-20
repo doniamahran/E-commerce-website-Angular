@@ -21,10 +21,10 @@ export class ProductService {
 
 
   constructor(private http: HttpClient) { }
-  // baseurl: string = "https://chocolate-store-api.herokuapp.com/";
-  baseurl: string = "http://localhost:3000/";
+   baseurl: string = "https://chocolate-store-api.herokuapp.com/";
+  // baseurl: string = "http://localhost:3000/";
 
-   t="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTM4ZjAyNjE3MmU1MjRhMDhhN2U5NSIsImlhdCI6MTYxNjA5NTEzN30.I6kM-ZXyLa0pw8a5NXp2Fn2HpeNf8IcjvoJ8s2cZmyo";
+   t="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNTM4ZjAyNjE3MmU1MjRhMDhhN2U5NSIsImlhdCI6MTYxNjE1MTkzMX0.ZEUCV4vH6mCGlzsiY79XHNlMnVVuQPyeBUG4rcrGnXo";
    headers_object = new HttpHeaders().set("Authorization", this.t);
      httpOptions = {
       headers: this.headers_object

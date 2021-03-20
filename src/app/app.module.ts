@@ -27,6 +27,18 @@ import { ProductService } from './shared/product.service';
 import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { DeleteProductComponent } from './delete-product/delete-product.component';
+import { LoginComponent} from '../app/login/login.component'
+import { RegistrationComponent} from '../app/registration/registration.component'
+import { ProfileComponent} from '../app/profilepage/profilepage.component'
+import { Profile} from '../app/profile'
+import { ProfilesService} from '../app/profiles.service'
+import { LoginService} from '../app/login.service'
+import { RegistrationService} from '../app/registration.service'
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -42,7 +54,10 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
     ProductDetailComponent,
     AddProductComponent,
     EditProductComponent,
-    DeleteProductComponent
+    DeleteProductComponent,
+    LoginComponent,
+    RegistrationComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +80,9 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
       {path: 'addproduct', component: AddProductComponent},
       {path: 'edit/:_id', component: EditProductComponent},
       {path: 'delete/:_id', component: DeleteProductComponent},
+      {path: 'login', component: LoginComponent},
+      {path: 'registration', component: RegistrationComponent},
+
       {path: '', redirectTo: '/home', pathMatch: 'full'},
       // {path: '404', component: NotFoundComponent},
       // {path: '**', redirectTo: '/404'}
@@ -74,7 +92,7 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
 
 
   ],
-  providers: [ProductlistService],
+  providers: [ProductlistService,RegistrationService,LoginService,ProfilesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
