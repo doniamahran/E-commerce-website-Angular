@@ -21,7 +21,7 @@ constructor(private http: HttpClient) {
 
 }
 getProduct(){
- return this.http.get(`  https://chocolate-store-api.herokuapp.com/api/product`);
+ return this.http.get(`https://chocolate-store-api.herokuapp.com/api/product`);
 
 //  return this.http.get(`http://localhost:3000/api/product`);
 }

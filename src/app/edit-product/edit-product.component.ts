@@ -28,7 +28,7 @@ export class EditProductComponent implements OnInit {
 
         this.showSucessMessage = true;
         setTimeout(() => this.showSucessMessage = false, 4000);
-        this.resetForm(form);
+    //    this.resetForm(form);
       },
       err => {
         if (err.status === 422) {
@@ -43,19 +43,19 @@ export class EditProductComponent implements OnInit {
     );
   }
 
-  resetForm(form: NgForm) {
-    this._ProductService.selectedProduct = {
-      name:'',
-      category:'',
-      description: '',
-      price: 0,
-      quantity:0,
-      country: '',
-     image:''
-    };
-    form.resetForm();
-    this.serverErrorMessages = '';
-  }
+  // resetForm(form: NgForm) {
+  //   this._ProductService.selectedProduct = {
+  //     name:'',
+  //     category:'',
+  //     description: '',
+  //     price: 0,
+  //     quantity:0,
+  //     country: '',
+  //    image:''
+  //   };
+  //   form.resetForm();
+  //   this.serverErrorMessages = '';
+  // }
 
   photo
   fd:FormData;

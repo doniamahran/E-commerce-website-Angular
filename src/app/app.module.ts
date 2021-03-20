@@ -33,7 +33,8 @@ import { ProfileComponent} from '../app/profilepage/profilepage.component'
 import { Profile} from '../app/profile'
 import { ProfilesService} from '../app/profiles.service'
 import { LoginService} from '../app/login.service'
-import { RegistrationService} from '../app/registration.service'
+import { RegistrationService} from '../app/registration.service';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component'
 
 
 
@@ -57,7 +58,8 @@ import { RegistrationService} from '../app/registration.service'
     DeleteProductComponent,
     LoginComponent,
     RegistrationComponent,
-    ProfileComponent
+    ProfileComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,

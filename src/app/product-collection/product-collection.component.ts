@@ -11,8 +11,8 @@ import { ProductlistService } from '../productlist.service';
 export class ProductCollectionComponent implements OnInit {
 
   //assuming ADMIN
-  user : string = "admin";
-
+  //user : string = "admin";
+user : string = "us";
 
   products :any ;
   constructor(private _productService : ProductlistService) {}
