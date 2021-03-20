@@ -34,9 +34,8 @@ import { Profile} from '../app/profile'
 import { ProfilesService} from '../app/profiles.service'
 import { LoginService} from '../app/login.service'
 import { RegistrationService} from '../app/registration.service';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component'
-
-
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import {CartService} from './cart.service'
 
 
 
@@ -94,7 +93,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component'
 
 
   ],
-  providers: [ProductlistService,RegistrationService,LoginService,ProfilesService],
+  providers: [ProductlistService,RegistrationService,LoginService,ProfilesService,CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
