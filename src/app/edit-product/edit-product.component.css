@@ -1,0 +1,44 @@
+
+#prodDiv{
+  background-color: white !important;
+  width: 50% !important;
+  height: auto !important;
+  border: 6px double #F5B461;
+  border-radius: 0px 30px 0px 30px;
+  text-align: center;
+  margin-top: 10% !important;
+}
+
+ img {
+   width: 70% !important;
+   height: auto !;
+ }
+
+ a{
+  background-color: #f4511e;
+    opacity: 1;
+  transition: 0.3s;
+ }
+ a:hover {opacity: 0.6}
+
+ #label {
+  font-size: larger;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   color: #351006;
+ }
+
+ input {
+   border: 1px solid #F5B461;
+
+   border-top: none;
+   border-left: none;
+   border-right: none;
+   outline: none;
+   text-align: center;
+ }
+
+ #inputImage {
+   border: 1px solid #F5B461;
+   padding: 3px;
+   border-radius: 0;
+ }

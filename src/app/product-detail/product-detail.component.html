@@ -1,0 +1,31 @@
+
+<div class="container p-3 justify-content-center" id="prodDiv">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+                                  <!-- image  -->
+      <img class="img-fluid" src="https://chocolate-store-api.herokuapp.com/uploads/productImages/{{products.image}}" alt="">
+    </div>
+
+
+    <div class="col-md-4" style="text-align: left;">
+      <h2 class="my-3 font-weight-bold" >{{products.name}}</h2>
+      <h3 class="card-text">{{products.description}}</h3>
+      <h3 class="card-text"><span class="my-3 font-weight-bold">Made in </span> {{products.country}}</h3>
+      <h3 class="card-text"><span class="my-3 font-weight-bold">In stock :</span> {{products.quantity}}</h3>
+
+      <h3 class="my-3 font-weight-bold" >PRICE : {{products.price}}</h3>
+
+  <a class="btn font-weight-bold" mdbWavesEffect>Add to Cart</a>
+
+      <!-- <a href="#" class="btn bgmine m-3">Add to cart</a> -->
+
+      <!-- <a href="#" class="btn bgmine m-3">Cancel</a> -->
+
+
+  </div>
+
+
+</div>
+
+
+
